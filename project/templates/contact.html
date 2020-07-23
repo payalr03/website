@@ -1,0 +1,21 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-5 mb-3">
+  <form action="/contact" method="POST"> {% csrf_token %}
+    <h2><span class="badge badge-dark mb-2">SEND US A MESSAGE</span></h2>
+    <input type="text" id="name" name="name" class="form-control" placeholder="ENTER YOUR NAME" required >
+    <input type="email" id="email" name="email" class="form-control mt-2" placeholder="ENTER YOUR EMAIL" required>
+    <input type="number" id="num" name="num" class="form-control mt-2" placeholder="ENTER YOUR MOBILE NUMBER" required>
+    <textarea class="form-control mt-2" id="desc" name="desc"  placeholder="HOW CAN I HELP YOU ?" rows="3" required></textarea>
+    <br>
+    <button class="btn btn-sm btn-info btn-block" type="submit">SUBMIT</button>
+  </form>
+  <br><br><br><br>
+</div>
+{% endblock body %}
